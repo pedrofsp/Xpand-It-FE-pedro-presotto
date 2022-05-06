@@ -7,4 +7,18 @@
     text-align: left;
     padding: 20px 10px;
   }
+
+  .align-text {
+    text-align: center;
+  }
+
+  .eye {
+    cursor: pointer;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .all-table-item {
+    font-size: 12px;
+  }
 }

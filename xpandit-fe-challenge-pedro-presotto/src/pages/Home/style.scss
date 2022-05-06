@@ -16,8 +16,17 @@
     text-align: left;
     padding: 8px;
   }
+  .align-text {
+    text-align: center;
+  }
+
+  .content-flex {
+    width: $widthPagePorcentage;
+  }
 }
 
-.content-flex {
-  width: $widthPagePorcentage;
+@media only screen and (max-width: 600px) {
+  .all-home {
+    font-size: 12px;
+  }
 }

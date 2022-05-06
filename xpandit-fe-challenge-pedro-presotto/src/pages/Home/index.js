@@ -20,6 +20,7 @@ export default function Home() {
         Title={item.title}
         Year={item.year}
         Revenue={item.revenue}
+        Id={item.id}
       />
     ));
   }
@@ -31,12 +32,13 @@ export default function Home() {
           <h1>Movie ranking</h1>
           <table>
             <tr>
-              <th>Ranking</th>
+              <th className="align-text">Ranking</th>
               <th>Title</th>
               <th>Year</th>
               <th>Revenue</th>
+              <th></th>
             </tr>
-            {content.length == 0 && <p>Loading...</p>}
+            {content.length === 0 && <p>Loading...</p>}
             {listContent()}
           </table>
         </div>

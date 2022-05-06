@@ -9,6 +9,11 @@
 }
 
 @font-face {
+  font-family: RobotoThin;
+  src: url('../assets/fonts/Roboto-Thin.ttf');
+}
+
+@font-face {
   font-family: RobotoBold;
   src: url('../assets/fonts/Roboto-Bold.ttf');
 }
@@ -16,6 +21,7 @@
 $font-roboto: 'Roboto';
 $font-roboto-light: 'RobotoLight';
 $font-roboto-bold: 'RobotoBold';
+$font-roboto-thin: 'RobotoThin';
 
 /*Colors*/
 
@@ -25,8 +31,10 @@ $grayBlue: #9aaebb;
 $black: #012433;
 $blue: #0b749b;
 $darkerOpaqueBlue: #386071;
-$lightGrayBlue: #78849e66;
+$lightGrayBlue: #78849eb9;
 $purpleBlue: #78849e;
+$gray: #718fa2;
+$linkBlue: #00baff;
 
 /*Font Size*/
 
