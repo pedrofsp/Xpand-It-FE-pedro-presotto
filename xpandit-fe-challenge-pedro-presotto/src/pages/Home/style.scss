@@ -1,0 +1,23 @@
+@import '../../sass/functions.scss';
+@import '../../sass/variables.scss';
+
+.all-home {
+  @include flexBox(row, center);
+  color: $darkerOpaqueBlue;
+  font-family: $font-roboto-light;
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  th {
+    font-family: $font-roboto-bold;
+    border-bottom: 2px solid $blue;
+    text-align: left;
+    padding: 8px;
+  }
+}
+
+.content-flex {
+  width: $widthPagePorcentage;
+}

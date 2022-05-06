@@ -1,5 +1,46 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import './style.scss';
+import TableItem from '../../components/tableItem';
 
 export default function Home() {
-  return <div>Home</div>;
+  const [content, setContent] = useState([]);
+
+  useEffect(() => {
+    fetch('http://movie-challenge-api-xpand.azurewebsites.net/api/movies')
+      .then((res) => res.json())
+      .then((res) => {
+        setContent(res.content);
+      });
+  }, []);
+
+  function listContent() {
+    return content.map((item) => (
+      <TableItem
+        Ranking={item.rank}
+        Title={item.title}
+        Year={item.year}
+        Revenue={item.revenue}
+      />
+    ));
+  }
+
+  return (
+    <div className="all-home">
+      <div className="content-flex">
+        <div>
+          <h1>Movie ranking</h1>
+          <table>
+            <tr>
+              <th>Ranking</th>
+              <th>Title</th>
+              <th>Year</th>
+              <th>Revenue</th>
+            </tr>
+            {content.length == 0 && <p>Loading...</p>}
+            {listContent()}
+          </table>
+        </div>
+      </div>
+    </div>
+  );
 }
