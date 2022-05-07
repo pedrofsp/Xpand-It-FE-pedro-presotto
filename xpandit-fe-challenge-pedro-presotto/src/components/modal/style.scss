@@ -1,6 +1,9 @@
 @import '../../sass/functions.scss';
 @import '../../sass/variables.scss';
 
+$margin-tb: 20px;
+$margin-tb-mobile: 10px;
+
 .all-modal {
   position: fixed;
   top: 0;
@@ -56,7 +59,7 @@
     }
 
     .topic {
-      margin-top: 20px;
+      margin: $margin-tb 0px;
       font-family: $font-roboto-bold;
 
       span {
@@ -100,7 +103,7 @@
         font-family: $font-roboto-thin;
         font-size: 32px;
         color: $blue;
-        margin: 20px 0px;
+        margin: $margin-tb 0px;
       }
       .close-button {
         align-self: center;
@@ -115,6 +118,35 @@
         }
         &:hover {
           opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $breakpoint-mobile) {
+  .all-modal {
+    .modal-card {
+      width: 70%;
+      padding: 25px 30px;
+
+      .topic {
+        margin: $margin-tb-mobile 0px;
+
+        p,
+        a {
+          margin-top: 5px;
+        }
+      }
+
+      .flex-dir-act {
+        @include flexBox(column, flex-start);
+      }
+
+      .flex-title {
+        h3 {
+          font-size: 20px;
+          margin: $margin-tb-mobile 0px;
         }
       }
     }
