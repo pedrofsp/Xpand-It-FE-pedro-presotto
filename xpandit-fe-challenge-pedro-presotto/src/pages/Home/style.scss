@@ -23,6 +23,11 @@
   .content-flex {
     width: $widthPagePorcentage;
   }
+
+  .flex-space {
+    width: 100%;
+    height: 15px;
+  }
 }
 
 @media only screen and (max-width: $breakpoint-mobile) {

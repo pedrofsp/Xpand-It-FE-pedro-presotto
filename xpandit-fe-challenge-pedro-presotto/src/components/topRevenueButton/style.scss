@@ -1,0 +1,27 @@
+@import '../../sass/functions.scss';
+@import '../../sass/variables.scss';
+
+.top-rev-button {
+  border-style: none;
+  border: solid 1px $purpleBlue;
+  border-radius: 20px;
+  color: $purpleBlue;
+  background-color: $white;
+  padding: 10px 20px;
+  font-family: $font-roboto-light;
+  font-size: 15px;
+  &:hover {
+    color: $darkerOpaqueBlue;
+    border-color: $darkerOpaqueBlue;
+  }
+}
+
+.active-button {
+  background-color: $linkBlue;
+  color: #000000;
+  font-family: $font-roboto;
+  &:hover {
+    color: #000000;
+    border-color: $darkerOpaqueBlue;
+  }
+}

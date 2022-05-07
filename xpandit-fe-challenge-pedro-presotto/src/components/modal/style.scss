@@ -63,7 +63,7 @@ $margin-tb-mobile: 10px;
       font-family: $font-roboto-bold;
 
       span {
-        color: $lightGrayBlue;
+        color: $purpleBlue;
         font-family: $font-roboto-light;
       }
 
@@ -126,6 +126,11 @@ $margin-tb-mobile: 10px;
 
 @media only screen and (max-width: $breakpoint-mobile) {
   .all-modal {
+    .loading-card {
+      width: 70%;
+      padding: 25px 30px;
+    }
+
     .modal-card {
       width: 70%;
       padding: 25px 30px;
