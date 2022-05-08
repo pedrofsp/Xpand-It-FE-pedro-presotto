@@ -5,15 +5,15 @@ import TopRevenueButton from '../../components/topRevenueButton';
 
 export default function Home() {
   const [content, setContent] = useState([]);
+  const [originalContent, setOriginalContent] = useState([]);
   const [activeTopRev, setActiveTopRev] = useState(false);
-  const [resOriginal, setResOriginal] = useState({});
 
   useEffect(() => {
     fetch('http://movie-challenge-api-xpand.azurewebsites.net/api/movies')
       .then((res) => res.json())
       .then((res) => {
         setContent(res.content);
-        setResOriginal(res.content);
+        setOriginalContent(res.content);
       });
   }, []);
 
@@ -29,12 +29,6 @@ export default function Home() {
     ));
   }
 
-  function filterTop10Rev() {
-    setContent(
-      content.sort((a, b) => (a.revenue < b.revenue ? 1 : -1)).slice(0, 10)
-    );
-  }
-
   return (
     <div className="all-home">
       <div className="content-flex">
@@ -44,9 +38,17 @@ export default function Home() {
             Active={activeTopRev}
             onClick={() => {
               setActiveTopRev(!activeTopRev);
-              if (activeTopRev) setContent(resOriginal);
-              else filterTop10Rev();
-              console.log('activeTopRev: ', activeTopRev);
+              if (activeTopRev) {
+                setContent(
+                  originalContent.sort((a, b) => (a.rank > b.rank ? 1 : -1))
+                );
+              } else {
+                setContent(
+                  originalContent
+                    .sort((a, b) => (a.revenue < b.revenue ? 1 : -1))
+                    .slice(0, 10)
+                );
+              }
             }}
           />
           <div className="flex-space"></div>
