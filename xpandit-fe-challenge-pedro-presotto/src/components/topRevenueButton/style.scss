@@ -2,12 +2,14 @@
 @import '../../sass/variables.scss';
 
 .top-rev-button {
+  cursor: pointer;
   border-style: none;
   border: solid 1px $purpleBlue;
   border-radius: 20px;
   color: $purpleBlue;
   background-color: $white;
   padding: 10px 20px;
+  height: fit-content;
   font-family: $font-roboto-light;
   font-size: 15px;
   &:hover {

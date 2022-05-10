@@ -1,0 +1,56 @@
+@import '../../sass/functions.scss';
+@import '../../sass/variables.scss';
+
+.all-dropdown-button {
+  display: flex;
+  .dropdown-button {
+    cursor: pointer;
+    border-style: none;
+    border: solid 1px $purpleBlue;
+    border-radius: 20px;
+    color: $purpleBlue;
+    background-color: $white;
+    padding: 10px 20px;
+    margin: 0 10px;
+    height: fit-content;
+    font-family: $font-roboto-light;
+    font-size: 15px;
+    &:hover {
+      color: $darkerOpaqueBlue;
+      border-color: $darkerOpaqueBlue;
+    }
+  }
+
+  #dropdown {
+    display: none;
+    position: absolute;
+    background-color: $white;
+    z-index: 1;
+    width: fit-content;
+    padding: 20px 45px;
+    text-align: center;
+    -webkit-box-shadow: 3px 2px 14px 11px rgba(0, 0, 0, 0.21);
+    box-shadow: 3px 3px 20px 3px rgba(0, 0, 0, 0.1);
+    font-size: 15px;
+
+    .year {
+      cursor: pointer;
+      font-family: $font-roboto;
+      padding: 5px 0;
+      opacity: 0.8;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  .active-button {
+    background-color: $linkBlue;
+    color: #000000;
+    font-family: $font-roboto;
+    &:hover {
+      color: #000000;
+      border-color: $darkerOpaqueBlue;
+    }
+  }
+}

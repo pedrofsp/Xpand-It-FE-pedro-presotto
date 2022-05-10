@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './style.scss';
 import TableItem from '../../components/tableItem';
 import TopRevenueButton from '../../components/topRevenueButton';
+import DropdownButton from '../../components/dropdownButton';
 
 export default function Home() {
   const [content, setContent] = useState([]);
@@ -29,28 +30,38 @@ export default function Home() {
     ));
   }
 
+  const propSetContent = (val) => {
+    setContent(val);
+  };
+
   return (
     <div className="all-home">
       <div className="content-flex">
         <div>
           <h1>Movie ranking</h1>
-          <TopRevenueButton
-            Active={activeTopRev}
-            onClick={() => {
-              setActiveTopRev(!activeTopRev);
-              if (activeTopRev) {
-                setContent(
-                  originalContent.sort((a, b) => (a.rank > b.rank ? 1 : -1))
-                );
-              } else {
-                setContent(
-                  originalContent
-                    .sort((a, b) => (a.revenue < b.revenue ? 1 : -1))
-                    .slice(0, 10)
-                );
-              }
-            }}
-          />
+          <div className="buttons">
+            <TopRevenueButton
+              Active={activeTopRev}
+              onClick={() => {
+                setActiveTopRev(!activeTopRev);
+                if (activeTopRev) {
+                  setContent(
+                    originalContent.sort((a, b) => (a.rank > b.rank ? 1 : -1))
+                  );
+                } else {
+                  setContent(
+                    originalContent
+                      .sort((a, b) => (a.revenue < b.revenue ? 1 : -1))
+                      .slice(0, 10)
+                  );
+                }
+              }}
+            />
+            <DropdownButton
+              OriginalContent={originalContent}
+              propSetContent={propSetContent}
+            />
+          </div>
           <div className="flex-space"></div>
           <table>
             <tr>
