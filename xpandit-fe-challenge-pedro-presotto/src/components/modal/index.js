@@ -6,7 +6,7 @@ export default function Modal(props) {
 
   useEffect(() => {
     fetch(
-      `http://movie-challenge-api-xpand.azurewebsites.net/api/movies/${props.Id}`
+      `https://movie-challenge-api-xpand.azurewebsites.net/api/movies/${props.Id}`
     )
       .then((res) => res.json())
       .then((res) => {

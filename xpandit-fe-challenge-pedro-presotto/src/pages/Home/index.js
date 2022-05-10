@@ -10,7 +10,7 @@ export default function Home() {
   const [activeTopRev, setActiveTopRev] = useState(false);
 
   useEffect(() => {
-    fetch('http://movie-challenge-api-xpand.azurewebsites.net/api/movies')
+    fetch('https://movie-challenge-api-xpand.azurewebsites.net/api/movies')
       .then((res) => res.json())
       .then((res) => {
         setContent(res.content);
