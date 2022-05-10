@@ -13,7 +13,19 @@
   }
 
   .eye {
+    position: relative;
+    z-index: -1;
     cursor: pointer;
+    opacity: 0.8;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    img {
+      width: 25px;
+      height: 25px;
+    }
   }
 }
 

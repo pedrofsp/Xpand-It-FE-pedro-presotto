@@ -54,3 +54,18 @@
     }
   }
 }
+
+@media only screen and (max-width: $breakpoint-mobile) {
+  .all-dropdown-button {
+    font-size: 12px;
+    position: relative;
+
+    #dropdown {
+      left: 10px;
+      top: 70px;
+      position: absolute;
+      background-color: $white;
+      z-index: 1;
+    }
+  }
+}

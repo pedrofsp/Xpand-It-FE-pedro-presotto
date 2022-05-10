@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './style.scss';
 import Modal from '../modal';
+import { default as eye } from '../../assets/images/home/eye-icon.svg';
 
 export default function TableItem(props) {
   const [showModal, setShowModal] = useState(false);
@@ -21,7 +22,7 @@ export default function TableItem(props) {
           setShowModal(true);
         }}
       >
-        <img src="../../../assets/images/home/eye-icon.svg" alt="eye icon" />
+        <img src={eye} alt="eye icon" />
       </td>
       {showModal && <Modal Id={props.Id} HandleState={HandleState} />}
     </tr>

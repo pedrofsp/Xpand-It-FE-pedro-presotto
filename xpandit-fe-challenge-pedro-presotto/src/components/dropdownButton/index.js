@@ -30,6 +30,8 @@ export default function DropdownButton(props) {
           alert('No result!');
         } else {
           props.propSetContent(auxArr);
+          setDropdownToggle(false);
+          document.getElementById('dropdown').style.display = 'none';
         }
       }}
       className="year"
