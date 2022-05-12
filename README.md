@@ -10,7 +10,7 @@
 
 -To start the project, run the following commands in the terminal:
 ``` console
-npm me
+npm i
 npm start
 ```
 
